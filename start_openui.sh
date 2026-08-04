@@ -1,0 +1,1 @@
+poetry run open-webui serve
