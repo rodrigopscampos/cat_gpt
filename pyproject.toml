@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "cat-gpt"
+version = "0.1.0"
+description = "Local RAG question and answer system"
+authors = ["Rodrigo"]
+readme = "README.md"
+packages = [
+  { include = "indexer" },
+  { include = "rag" },
+  { include = "openwebui" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+chromadb = "^0.5.5"
+pymupdf = "^1.24.10"
+llama-index-core = "^0.12.0"
+llama-index-vector-stores-chroma = "^0.4.1"
+llama-index-embeddings-huggingface = "^0.4.0"
+sentence-transformers = "^3.0.1"
+pydantic = "^2.8.2"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.6.9"
+pytest = "^8.3.2"
+
+[tool.poetry.scripts]
+rag-index = "indexer.main:main"
+
+[build-system]
+requires = ["poetry-core>=1.9.0"]
+build-backend = "poetry.core.masonry.api"
