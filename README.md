@@ -68,11 +68,13 @@ The `openwebui/pipeline.py` module exposes a `Pipeline`/`Pipe` adapter that Open
 custom pipeline. It takes the latest user message, reuses recent conversation context, retrieves local
 chunks, and returns a markdown answer with source citations appended.
 
-To launch the Q&A UI locally:
+To launch the API locally:
 
 ```bash
 poetry run open-webui serve
 ```
+
+Swagger UI is available at `http://localhost:8080/docs` by default.
 
 If you want to exercise the runtime path directly from Python, use the `rag.pipeline.RAGPipeline`
 class.

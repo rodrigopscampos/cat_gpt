@@ -19,6 +19,8 @@ llama-index-vector-stores-chroma = "^0.4.1"
 llama-index-embeddings-huggingface = "^0.4.0"
 sentence-transformers = "^3.0.1"
 pydantic = "^2.8.2"
+fastapi = "^0.141.1"
+uvicorn = "^0.35.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.6.9"
