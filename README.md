@@ -51,37 +51,43 @@ By default, the index is written to `data/chroma/` using a single Chroma collect
 
 After indexing, you can inspect the local Chroma database in a few ways.
 
-### CLI: list collections and vector counts
+### CLI: default-first Chroma commands
 
-Use a small Python snippet to connect to the persistent database and print the available collections:
+Use the built-in Chroma CLI from this repository:
 
 ```bash
-poetry run python - <<'PY'
-from chromadb import PersistentClient
-
-client = PersistentClient(path="data/chroma")
-for collection in client.list_collections():
-    print(f"{collection.name}: {collection.count()} vectors")
-PY
+poetry run rag-chroma --list
 ```
 
-By default, this project uses Chroma's built-in values: `default_tenant` and `default_database`.
-You do not need to pass them for the local embedded database shown above unless you have changed
-the client configuration.
+The command above reads defaults from project config, so in the common case you don't need
+to pass extra parameters:
 
-If you ever connect to a custom or remote Chroma deployment, the Python client also accepts
-`tenant` and `database` arguments.
+- Chroma directory: `data/chroma`
+- Collection: `rag_documents`
+- Embedding model for query text: `BAAI/bge-m3`
 
-You can also inspect the first records in the main collection:
+Run a sample top-k query (using defaults):
 
 ```bash
-poetry run python - <<'PY'
-from chromadb import PersistentClient
+poetry run rag-chroma --query "cat nutrition by age"
+```
 
-client = PersistentClient(path="data/chroma")
-collection = client.get_collection("rag_documents")
-print(collection.peek(5))
-PY
+Override defaults when needed:
+
+```bash
+poetry run rag-chroma --chroma-dir data/chroma --collection rag_documents --query "kitten feeding" --k 5
+```
+
+If your collection was indexed with a different embedding model, override it explicitly:
+
+```bash
+poetry run rag-chroma --query "kitten feeding" --embedding-model BAAI/bge-small-en-v1.5
+```
+
+You can also run it as a module:
+
+```bash
+poetry run python -m indexer.chroma_cli --list
 ```
 
 ### GUI: open the SQLite file
