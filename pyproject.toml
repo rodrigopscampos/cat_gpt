@@ -27,6 +27,7 @@ pytest = "^8.3.2"
 [tool.poetry.scripts]
 rag-index = "indexer.main:main"
 rag-chroma = "indexer.chroma_cli:main"
+open-webui = "openwebui.cli:main"
 
 [build-system]
 requires = ["poetry-core>=1.9.0"]

@@ -7,7 +7,10 @@ This repository is being built as a fully local RAG system with two phases:
 
 ## Current MVP focus
 
-The first implementation milestone is the offline ingestion pipeline.
+The first implementation milestone was the offline ingestion pipeline.
+
+The online question-answering path is now available through the `rag/` package and the
+`openwebui/pipeline.py` adapter.
 
 ### Supported inputs
 
@@ -30,6 +33,49 @@ The first implementation milestone is the offline ingestion pipeline.
 - Ollama
 - Open WebUI
 - `BAAI/bge-m3`
+
+## Online Q&A
+
+The runtime Q&A layer loads the persisted Chroma database from `data/chroma/`, retrieves the
+top matching chunks, builds a grounded prompt, and sends it to Ollama locally.
+
+### Default runtime configuration
+
+The online pipeline reads these environment variables when present:
+
+- `RAG_CHROMA_DIR`
+- `RAG_CHROMA_COLLECTION`
+- `RAG_EMBEDDING_MODEL`
+- `RAG_LLM_MODEL`
+- `RAG_OLLAMA_BASE_URL`
+- `RAG_TOP_K`
+- `RAG_MAX_CONTEXT_CHARS`
+- `RAG_CONVERSATION_TURNS`
+- `RAG_TEMPERATURE`
+- `RAG_OLLAMA_TIMEOUT`
+
+Defaults are tuned for the local setup described in `PLAN.md`:
+
+- Chroma directory: `data/chroma`
+- Chroma collection: `rag_documents`
+- Embedding model: `BAAI/bge-m3`
+- LLM model: `gemma3:1b`
+- Ollama base URL: `http://localhost:11434`
+
+### Open WebUI integration
+
+The `openwebui/pipeline.py` module exposes a `Pipeline`/`Pipe` adapter that Open WebUI can load as a
+custom pipeline. It takes the latest user message, reuses recent conversation context, retrieves local
+chunks, and returns a markdown answer with source citations appended.
+
+To launch the Q&A UI locally:
+
+```bash
+poetry run open-webui serve
+```
+
+If you want to exercise the runtime path directly from Python, use the `rag.pipeline.RAGPipeline`
+class.
 
 ## Install
 
@@ -120,3 +166,6 @@ The ingestion pipeline reads these environment variables when present:
 - `RAG_EMBEDDING_MODEL`
 - `RAG_CHUNK_SIZE`
 - `RAG_CHUNK_OVERLAP`
+
+The online pipeline uses the same Chroma and embedding settings, plus the runtime variables listed
+above for Ollama and prompt shaping.
