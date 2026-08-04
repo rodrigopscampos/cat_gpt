@@ -5,9 +5,12 @@ from typing import Any
 
 from rag.config import RuntimeConfig, load_runtime_config
 from rag.llm import OllamaClient, OllamaConfig
-from rag.prompt import build_messages, render_answer
-from rag.retriever import RagRetriever, RetrievedChunk
+from rag.vecstorer import VecStoreRetriever, RetrievedChunk
 
+@dataclass(frozen=True)
+class PromptBundle:
+    messages: list[dict[str, str]]
+    context: str
 
 @dataclass(frozen=True)
 class RAGResult:
@@ -16,46 +19,112 @@ class RAGResult:
     sources: list[RetrievedChunk]
     context: str
 
+def _format_sources_markdown(sources: list[RetrievedChunk]) -> str:
+    if not sources:
+        return "No supporting sources were retrieved."
 
-class RAGPipeline:
-    def __init__(
-        self,
-        config: RuntimeConfig | None = None,
-        retriever: RagRetriever | None = None,
-        llm: OllamaClient | None = None,
-    ) -> None:
-        self.config = config or load_runtime_config()
-        self.retriever = retriever or RagRetriever(config=self.config)
-        self.llm = llm or OllamaClient(config=OllamaConfig.from_runtime(self.config))
+    lines = ["## Sources"]
+    for index, source in enumerate(sources, start=1):
+        lines.append(f"- **Source {index}** — {source.citation}")
+    return "\n".join(lines)
 
-    def answer(self, question: str, history: list[dict[str, str]] | None = None) -> RAGResult:
-        sources = self.retriever.retrieve(question)
-        prompt = build_messages(question=question, sources=sources, history=history, config=self.config)
-        answer = self.llm.chat(prompt.messages)
-        return RAGResult(question=question, answer=render_answer(answer, sources), sources=sources, context=prompt.context)
+def _render_answer(answer: str, sources: list[RetrievedChunk]) -> str:
+    answer = answer.strip()
+    sources_block = _format_sources_markdown(sources)
+    if answer:
+        return f"{answer}\n\n{sources_block}"
+    return sources_block
 
-    def answer_stream(self, question: str, history: list[dict[str, str]] | None = None):
-        sources = self.retriever.retrieve(question)
-        prompt = build_messages(question=question, sources=sources, history=history, config=self.config)
-        yield from self.llm.stream_chat(prompt.messages)
-
-
-def format_history(messages: list[dict[str, Any]], turn_limit: int) -> list[dict[str, str]]:
+def _format_history(history: list[dict[str, str]], turn_limit: int) -> list[dict[str, str]]:
     if turn_limit <= 0:
         return []
 
-    history: list[dict[str, str]] = []
-    for message in messages:
-        role = message.get("role")
-        content = message.get("content")
-        if role not in {"user", "assistant"}:
-            continue
-        if not isinstance(content, str):
-            continue
-        history.append({"role": role, "content": content})
-    return history[-turn_limit * 2 :]
+    filtered = [message for message in history if message.get("role") in {"user", "assistant"}]
+    return filtered[-turn_limit * 2 :]
+
+SYSTEM_PROMPT = (
+    "You are a local retrieval-augmented assistant. Answer the user's question using only the provided "
+    "context when possible. If the context does not contain enough information, say so clearly and avoid "
+    "inventing details. Prefer concise, direct answers. Always mention useful citations from the sources section "
+    "when available."
+)
 
 
-def ask_question(question: str, history: list[dict[str, str]] | None = None) -> str:
-    pipeline = RAGPipeline()
-    return pipeline.answer(question, history=history).answer
+def _truncate(text: str, limit: int) -> str:
+    if limit <= 0 or len(text) <= limit:
+        return text
+    return text[: max(0, limit - 1)].rstrip() + "…"
+
+def _build_context_block(sources: list[RetrievedChunk], max_context_chars: int) -> str:
+    if not sources:
+        return ""
+
+    sections: list[str] = []
+    remaining = max_context_chars
+
+    for index, source in enumerate(sources, start=1):
+        header = f"[Source {index}] {source.citation}"
+        body = _truncate(source.text.strip(), max(0, remaining - len(header) - 3))
+        section = f"{header}\n{body}".strip()
+        if not section:
+            continue
+
+        section_length = len(section)
+        if sections and section_length > remaining:
+            break
+
+        sections.append(section)
+        remaining -= section_length
+        if remaining <= 0:
+            break
+
+    return "\n\n".join(sections)
+
+
+def _build_messages(
+    question: str,
+    sources: list[RetrievedChunk],
+    history: list[dict[str, str]] | None = None,
+    config: RuntimeConfig | None = None,
+) -> PromptBundle:
+    config = config or RuntimeConfig.from_env()
+    context: str = _build_context_block(sources, config.max_context_chars)
+
+    messages: list[dict[str, str]] = [{"role": "system", "content": SYSTEM_PROMPT}]
+    if history:
+        messages.extend(_format_history(history, config.conversation_turns))
+
+    if context:
+        user_prompt = (
+            "Use the sources below to answer the question. Keep the answer grounded in the sources and cite them "
+            "briefly when possible.\n\n"
+            f"Sources:\n{context}\n\n"
+            f"Question: {question}"
+        )
+    else:
+        user_prompt = (
+            "No retrieved sources were available. If you answer, be explicit that the collection did not return "
+            "supporting context.\n\n"
+            f"Question: {question}"
+        )
+
+    messages.append({"role": "user", "content": user_prompt})
+    return PromptBundle(messages=messages, context=context)
+
+
+class RAGPipeline:
+    def __init__(self) -> None:
+        self.config = load_runtime_config()
+        self.vec_store_retriever = VecStoreRetriever(config=self.config)
+        self.llm = OllamaClient(config=OllamaConfig.from_runtime(self.config))
+
+    def answer(self, question: str, history: list[dict[str, str]] | None = None) -> RAGResult:
+        sources = self.vec_store_retriever.retrieve(question)
+        prompt = _build_messages(question=question, sources=sources, history=history, config=self.config)
+        answer = self.llm.chat(prompt.messages)
+        return RAGResult(
+            question=question, 
+            answer=_render_answer(answer, sources), 
+            sources=sources, 
+            context=prompt.context)    
+    

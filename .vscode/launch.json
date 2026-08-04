@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug FastAPI (Poetry)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/openwebui/api.py",
+      "python": "${command:python.interpreterPath}",
+      "args": ["serve", "--port", "8080"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}

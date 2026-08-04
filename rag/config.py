@@ -25,7 +25,7 @@ class RuntimeConfig:
             collection_name=os.getenv("RAG_CHROMA_COLLECTION", "rag_documents"),
             embedding_model=os.getenv("RAG_EMBEDDING_MODEL", "BAAI/bge-m3"),
             llm_model=os.getenv("RAG_LLM_MODEL", "gemma3:1b"),
-            ollama_base_url=os.getenv("RAG_OLLAMA_BASE_URL", "http://localhost:11434"),
+            ollama_base_url=os.getenv("RAG_OLLAMA_BASE_URL", "http://localhost:11434"), #http://localhost:11434
             top_k=int(os.getenv("RAG_TOP_K", "5")),
             max_context_chars=int(os.getenv("RAG_MAX_CONTEXT_CHARS", "12000")),
             conversation_turns=int(os.getenv("RAG_CONVERSATION_TURNS", "4")),

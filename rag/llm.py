@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from ollama import Client
+
 from dataclasses import dataclass
 import json
 from typing import Iterator
@@ -31,18 +33,36 @@ class OllamaClient:
         self.config = config or OllamaConfig.from_runtime(runtime_config)
 
     def chat(self, messages: list[dict[str, str]]) -> str:
-        payload = {
-            "model": self.config.model,
-            "messages": messages,
-            "stream": False,
-            "options": {"temperature": self.config.temperature},
-        }
-        data = self._post_json("/api/chat", payload)
-        message = data.get("message") or {}
-        content = message.get("content", "")
-        if not isinstance(content, str):
-            return str(content)
-        return content
+        # payload = {
+        #     "model": self.config.model,
+        #     "messages": messages,
+        #     "stream": False,
+        #     "options": {"temperature": self.config.temperature},
+        # }
+        # data = self._post_json("/api/chat", payload)
+        # message = data.get("message") or {}
+        # content = message.get("content", "")
+        # if not isinstance(content, str):
+        #     return str(content)
+        # return content
+        
+        client = Client(host="http://localhost:11434")
+
+        try:
+            response = client.chat(
+                model=self.config.model,
+                messages=messages,
+                stream=False,
+                options={"temperature": self.config.temperature},
+            )
+
+            response_text = str(response["message"]["content"])
+            print(response_text)
+            return response_text
+    
+        except Exception as e:
+            print(e)
+            raise e
 
     def stream_chat(self, messages: list[dict[str, str]]) -> Iterator[str]:
         payload = {

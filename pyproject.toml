@@ -21,6 +21,7 @@ sentence-transformers = "^3.0.1"
 pydantic = "^2.8.2"
 fastapi = "^0.141.1"
 uvicorn = "^0.35.0"
+ollama = "^0.6.2"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.6.9"
@@ -29,7 +30,7 @@ pytest = "^8.3.2"
 [tool.poetry.scripts]
 rag-index = "indexer.main:main"
 rag-chroma = "indexer.chroma_cli:main"
-open-webui = "openwebui.cli:main"
+api = "openwebui.api:main"
 
 [build-system]
 requires = ["poetry-core>=1.9.0"]

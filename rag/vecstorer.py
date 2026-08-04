@@ -44,14 +44,13 @@ def format_citation(metadata: dict[str, Any]) -> str:
     return ", ".join(parts) if parts else "source unavailable"
 
 
-class RagRetriever:
+class VecStoreRetriever:
     def __init__(
         self,
-        config: RuntimeConfig | None = None,
-        embed_model: object | None = None,
+        config: RuntimeConfig
     ) -> None:
         self.config = config or load_runtime_config()
-        self.embed_model = embed_model or build_embedding_model(self.config.embedding_model)
+        self.embed_model = build_embedding_model(self.config.embedding_model)
         self.collection = self._load_collection(self.config.chroma_dir, self.config.collection_name)
         vector_store = ChromaVectorStore(chroma_collection=self.collection)
         self.index = VectorStoreIndex.from_vector_store(vector_store, embed_model=self.embed_model)
@@ -62,14 +61,7 @@ class RagRetriever:
             raise FileNotFoundError(f"Chroma directory not found: {chroma_dir}")
 
         client = PersistentClient(path=str(chroma_dir))
-        try:
-            return client.get_collection(collection_name)
-        except Exception as exc:  # pragma: no cover - chromadb exception types vary by version
-            available = [getattr(collection, "name", str(collection)) for collection in client.list_collections()]
-            raise LookupError(
-                f"Chroma collection '{collection_name}' was not found in {chroma_dir}. "
-                f"Available collections: {available or 'none'}"
-            ) from exc
+        return client.get_collection(collection_name)
 
     def retrieve(self, query: str) -> list[RetrievedChunk]:
         nodes = self.retriever.retrieve(query)

@@ -1,14 +1,16 @@
 from __future__ import annotations
 
+# Suppress non-fatal Pydantic / User warnings during imports
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
+
 import argparse
 from typing import Any
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
-from rag.prompt import render_answer
-from rag.pipeline import RAGPipeline, format_history
-
+from rag.pipeline import RAGPipeline
 
 app = FastAPI(
     title="Cat GPT API",
@@ -52,10 +54,6 @@ def build_argument_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def _build_pipeline() -> RAGPipeline:
-    return RAGPipeline()
-
-
 def serve(host: str, port: int, no_browser: bool = False) -> None:
     if no_browser:
         print("The API no longer serves a browser UI. Swagger docs are available at /docs.")
@@ -64,6 +62,20 @@ def serve(host: str, port: int, no_browser: bool = False) -> None:
 
     uvicorn.run(app, host=host, port=port)
 
+def _format_history(messages: list[dict[str, Any]], turn_limit: int) -> list[dict[str, str]]:
+    if turn_limit <= 0:
+        return []
+
+    history: list[dict[str, str]] = []
+    for message in messages:
+        role = message.get("role")
+        content = message.get("content")
+        if role not in {"user", "assistant"}:
+            continue
+        if not isinstance(content, str):
+            continue
+        history.append({"role": role, "content": content})
+    return history[-turn_limit * 2 :]
 
 @app.post("/api/chat", response_model=ChatResponse)
 def chat(request: ChatRequest) -> ChatResponse:
@@ -71,26 +83,10 @@ def chat(request: ChatRequest) -> ChatResponse:
     if not question:
         raise HTTPException(status_code=400, detail="Missing question")
 
-    pipeline = _build_pipeline()
+    pipeline = RAGPipeline()
     history = [message.model_dump() for message in request.history]
 
-    try:
-        result = pipeline.answer(question, history=format_history(history, pipeline.config.conversation_turns))
-    except Exception as exc:  # pragma: no cover - local service/runtime dependent
-        fallback_sources = pipeline.retriever.retrieve(question)
-        fallback_answer = (
-            "I could retrieve relevant local sources, but I couldn't reach Ollama to generate a full answer. "
-            "Start Ollama and try again for a synthesized response."
-        )
-        return ChatResponse(
-            question=question,
-            answer=render_answer(fallback_answer, fallback_sources),
-            sources=[
-                SourcePayload(citation=source.citation, score=source.score, metadata=source.metadata)
-                for source in fallback_sources
-            ],
-            warning=str(exc),
-        )
+    result = pipeline.answer(question, history=_format_history(history, pipeline.config.conversation_turns))
 
     return ChatResponse(
         question=question,
@@ -111,3 +107,7 @@ def main() -> None:
         return
 
     serve(args.host, args.port, no_browser=args.no_browser)
+
+
+if __name__ == "__main__":
+    main()
