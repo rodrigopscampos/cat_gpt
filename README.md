@@ -71,13 +71,18 @@ chunks, and returns a markdown answer with source citations appended.
 To launch the API locally:
 
 ```bash
-poetry run open-webui serve
+./start_openui.sh #front-end
+./start_api.sh    #back-end
 ```
 
-Swagger UI is available at `http://localhost:8080/docs` by default.
+Swagger UI is available at `http://localhost:8000`
 
 If you want to exercise the runtime path directly from Python, use the `rag.pipeline.RAGPipeline`
 class.
+
+
+### Configure back-end API address on UI
+![](image.png)
 
 ## Install
 
