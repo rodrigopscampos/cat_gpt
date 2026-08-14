@@ -1,0 +1,1 @@
+poetry run python src/rag_pipeline.py

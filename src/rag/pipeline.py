@@ -1,11 +1,10 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any
 
-from rag.config import RuntimeConfig, load_runtime_config
-from rag.llm import OllamaClient, OllamaConfig
+from rag.config import Config
 from rag.vecstorer import VecStoreRetriever, RetrievedChunk
+from ollama import Client
 
 @dataclass(frozen=True)
 class PromptBundle:
@@ -80,48 +79,63 @@ def _build_context_block(sources: list[RetrievedChunk], max_context_chars: int) 
 
     return "\n\n".join(sections)
 
-
-def _build_messages(
-    question: str,
-    sources: list[RetrievedChunk],
-    history: list[dict[str, str]] | None = None,
-    config: RuntimeConfig | None = None,
-) -> PromptBundle:
-    config = config or RuntimeConfig.from_env()
-    context: str = _build_context_block(sources, config.max_context_chars)
-
-    messages: list[dict[str, str]] = [{"role": "system", "content": SYSTEM_PROMPT}]
-    if history:
-        messages.extend(_format_history(history, config.conversation_turns))
-
-    if context:
-        user_prompt = (
-            "Use the sources below to answer the question. Keep the answer grounded in the sources and cite them "
-            "briefly when possible.\n\n"
-            f"Sources:\n{context}\n\n"
-            f"Question: {question}"
-        )
-    else:
-        user_prompt = (
-            "No retrieved sources were available. If you answer, be explicit that the collection did not return "
-            "supporting context.\n\n"
-            f"Question: {question}"
-        )
-
-    messages.append({"role": "user", "content": user_prompt})
-    return PromptBundle(messages=messages, context=context)
-
-
 class RAGPipeline:
     def __init__(self) -> None:
-        self.config = load_runtime_config()
-        self.vec_store_retriever = VecStoreRetriever(config=self.config)
-        self.llm = OllamaClient(config=OllamaConfig.from_runtime(self.config))
+        self.config = Config
+        self.vec_store_retriever = VecStoreRetriever()
 
-    def answer(self, question: str, history: list[dict[str, str]] | None = None) -> RAGResult:
+    def _build_messages(
+        self,
+        question: str,
+        sources: list[RetrievedChunk],
+        history: list[dict[str, str]]
+    ) -> PromptBundle:
+        context: str = _build_context_block(sources, self.config.max_context_chars)
+
+        messages: list[dict[str, str]] = [{"role": "system", "content": SYSTEM_PROMPT}]
+        if history:
+            messages.extend(_format_history(history, self.config.conversation_turns))
+
+        if context:
+            user_prompt = (
+                "Use the sources below to answer the question. Keep the answer grounded in the sources and cite them "
+                "briefly when possible.\n\n"
+                f"Sources:\n{context}\n\n"
+                f"Question: {question}"
+            )
+        else:
+            user_prompt = (
+                "No retrieved sources were available. If you answer, be explicit that the collection did not return "
+                "supporting context.\n\n"
+                f"Question: {question}"
+            )
+
+        messages.append({"role": "user", "content": user_prompt})
+        return PromptBundle(messages=messages, context=context)        
+
+    def _execute_ollama_request(self, messages: list[dict[str, str]]) -> str:
+        client = Client(host=self.config.ollama_base_url)
+
+        try:
+            response = client.chat(
+                model=self.config.llm_model,
+                messages=messages,
+                stream=False,
+                options={"temperature": self.config.temperature},
+            )
+
+            response_text = str(response["message"]["content"])
+            print(response_text)
+            return response_text
+    
+        except Exception as e:
+            print(e)
+            raise e
+
+    def answer(self, question: str, history: list[dict[str, str]]) -> RAGResult:
         sources = self.vec_store_retriever.retrieve(question)
-        prompt = _build_messages(question=question, sources=sources, history=history, config=self.config)
-        answer = self.llm.chat(prompt.messages)
+        prompt = self._build_messages(question=question, sources=sources, history=history)
+        answer = self._execute_ollama_request(prompt.messages)
         return RAGResult(
             question=question, 
             answer=_render_answer(answer, sources), 

@@ -21,15 +21,11 @@ llama-index-embeddings-huggingface = "^0.4.0"
 pydantic = "^2.8.2"
 ollama = "^0.6.2"
 open-webui = "^0.11.0"
+pyright = "^1.1.411"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.6.9"
 pytest = "^8.3.2"
-
-[tool.poetry.scripts]
-rag-index = "indexer.main:main"
-rag-chroma = "indexer.chroma_cli:main"
-api = "openwebui.api:main"
 
 [build-system]
 requires = ["poetry-core>=1.9.0"]

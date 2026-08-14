@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
@@ -8,10 +7,9 @@ from chromadb import PersistentClient
 from llama_index.core import VectorStoreIndex
 from llama_index.core.schema import NodeWithScore
 from llama_index.vector_stores.chroma import ChromaVectorStore
-
-from indexer.embeddings import build_embedding_model
-from rag.config import RuntimeConfig, load_runtime_config
-
+from dataclasses import dataclass
+import rag.embedding as embedding
+from rag.config import Config
 
 @dataclass(frozen=True)
 class RetrievedChunk:
@@ -22,7 +20,7 @@ class RetrievedChunk:
     citation: str
 
 
-def format_citation(metadata: dict[str, Any]) -> str:
+def _format_citation(metadata: dict[str, Any]) -> str:
     parts: list[str] = []
 
     document_name = metadata.get("document_name") or metadata.get("relative_path")
@@ -47,10 +45,9 @@ def format_citation(metadata: dict[str, Any]) -> str:
 class VecStoreRetriever:
     def __init__(
         self,
-        config: RuntimeConfig
     ) -> None:
-        self.config = config or load_runtime_config()
-        self.embed_model = build_embedding_model(self.config.embedding_model)
+        self.config = Config
+        self.embed_model = embedding.Embedding
         self.collection = self._load_collection(self.config.chroma_dir, self.config.collection_name)
         vector_store = ChromaVectorStore(chroma_collection=self.collection)
         self.index = VectorStoreIndex.from_vector_store(vector_store, embed_model=self.embed_model)
@@ -63,10 +60,6 @@ class VecStoreRetriever:
         client = PersistentClient(path=str(chroma_dir))
         return client.get_collection(collection_name)
 
-    def retrieve(self, query: str) -> list[RetrievedChunk]:
-        nodes = self.retriever.retrieve(query)
-        return [self._convert_node(node) for node in nodes]
-
     def _convert_node(self, node: NodeWithScore) -> RetrievedChunk:
         metadata = dict(node.node.metadata or {})
         return RetrievedChunk(
@@ -74,5 +67,9 @@ class VecStoreRetriever:
             text=node.node.get_content(),
             score=node.score,
             metadata=metadata,
-            citation=format_citation(metadata),
+            citation=_format_citation(metadata),
         )
+
+    def retrieve(self, query: str) -> list[RetrievedChunk]:
+        nodes = self.retriever.retrieve(query)
+        return [self._convert_node(node) for node in nodes]
