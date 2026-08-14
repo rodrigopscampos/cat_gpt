@@ -1,1 +1,1 @@
-poetry run open-webui serve
+poetry run open-webui serve --port 8000
