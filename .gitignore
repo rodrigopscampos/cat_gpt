@@ -4,8 +4,6 @@ __pycache__/
 .ruff_cache/
 .mypy_cache/
 *.pyc
-data/chroma/
-.env
 dist/
 build/
 *.egg-info/
