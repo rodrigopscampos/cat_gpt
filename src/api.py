@@ -18,6 +18,8 @@ app = FastAPI(
     version="1.0.0",
 )
 
+pipeline = RAGPipeline()
+
 class OpenAIMessage(BaseModel):
     role: str
     content: str
@@ -69,7 +71,6 @@ def chat_completions(request: OpenAIChatRequest):
     # The final message is treated as the current question
     question = history_msgs.pop()["content"] if history_msgs else ""
 
-    pipeline = RAGPipeline()
     result = pipeline.answer(question, history=_format_history(history_msgs, pipeline.config.conversation_turns))
 
     # Open WebUI standard UI doesn't natively parse custom payload blocks, 

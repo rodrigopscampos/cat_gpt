@@ -23,23 +23,20 @@ def _chunk_documents(documents: list[Document], chunk_size: int, chunk_overlap: 
     print(f"Split {len(documents)} documents into {len(nodes)} chunks")
     return nodes
 
-def _clear_collection(persist_dir: Path, collection_name: str) -> None:
-    client = PersistentClient(path=str(persist_dir))
+def _clear_collection(client: PersistentClient, persist_dir: Path, collection_name: str) -> None:
     existing_names = {collection.name for collection in client.list_collections()}
     if collection_name in existing_names:
         client.delete_collection(collection_name)
         print(f"Cleared existing collection '{collection_name}' in {persist_dir}")
-    
 
-def _build_vector_store(persist_dir: Path, collection_name: str) -> tuple[ChromaVectorStore, Collection]:
-    persist_dir.mkdir(parents=True, exist_ok=True)
-    client = PersistentClient(path=str(persist_dir))
+
+def _build_vector_store(client: PersistentClient, persist_dir: Path, collection_name: str) -> tuple[ChromaVectorStore, Collection]:
     collection = client.get_or_create_collection(name=collection_name, metadata={"hnsw:space": "cosine"})
     print(f"Created or loaded collection '{collection_name}' in {persist_dir}")
 
-    vector_store = ChromaVectorStore(chroma_collection=collection), collection    
+    vector_store = ChromaVectorStore(chroma_collection=collection)
     print(f"Initialized ChromaVectorStore with collection '{collection_name}'")
-    return vector_store
+    return vector_store, collection
 
 
 def main() -> None:
@@ -53,9 +50,12 @@ def main() -> None:
 
     nodes = _chunk_documents(documents, Config.chunk_size, Config.chunk_overlap)
 
-    _clear_collection(Config.chroma_dir, Config.collection_name)
+    Config.chroma_dir.mkdir(parents=True, exist_ok=True)
+    client = PersistentClient(path=str(Config.chroma_dir))
 
-    vector_store, collection = _build_vector_store(Config.chroma_dir, Config.collection_name)
+    _clear_collection(client, Config.chroma_dir, Config.collection_name)
+
+    vector_store, collection = _build_vector_store(client, Config.chroma_dir, Config.collection_name)
 
     storage_context = StorageContext.from_defaults(vector_store=vector_store)
     Settings.embed_model = embedding.Embedding
