@@ -1,0 +1,702 @@
+[
+    {
+        "_id":1,
+        "question":"What is chronic kidney disease in cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Chronic kidney disease, or CKD, is a progressive disease with no definitive cure, affecting up to 40% of cats over the age of 10 and 80% of cats over the age of 15. It\u2019s a condition where the kidneys lose their ability to filter the blood effectively, and it can have many health consequences.",
+        "latency_seconds":16.12
+    },
+    {
+        "_id":2,
+        "question":"How common is chronic kidney disease in cats over 15 years old?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Chronic kidney disease is one of the most prevalent diseases in older cats, affecting up to 40% of cats over the age of 10 and 80% of cats over the age of 15.",
+        "latency_seconds":17.16
+    },
+    {
+        "_id":3,
+        "question":"What are the early signs of feline diabetes?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, some early signs of feline diabetes include:\n\n*   Weight loss despite a good appetite\n*   Increased thirst and urination\n*   Excessive thirst and urination\n*   Poor appetite\n*   Frequent urination",
+        "latency_seconds":14.79
+    },
+    {
+        "_id":4,
+        "question":"Can diabetes in cats be managed with diet alone?",
+        "model_name":"gemma3:1b",
+        "model_answer":"No, diabetes in cats cannot be managed solely with diet.\n\nThe sources indicate that diet is important for diabetic cats, but it is not sufficient to manage the disease on its own. The sources state:\n\n\u201cA diet low in carbohydrates has been shown to improve blood sugar regulation in diabetic cats.\u201d\n\nThe sources also mention that slow, controlled weight loss under the close monitoring of a veterinarian is very important for cats who are overweight when diagnosed with diabetes.",
+        "latency_seconds":13.81
+    },
+    {
+        "_id":5,
+        "question":"What is FLUTD?",
+        "model_name":"gemma3:1b",
+        "model_answer":"FLUTD refers to Lower Urinary Tract Disease. It encompasses abnormalities in the structure and function of the bladder and urethra.",
+        "latency_seconds":4.47
+    },
+    {
+        "_id":6,
+        "question":"What causes feline lower urinary tract disease?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, feline lower urinary tract disease (LUTD) can be caused by idiopathic cystitis, urolithiasis (urinary stones), and urethral obstruction.",
+        "latency_seconds":4.56
+    },
+    {
+        "_id":7,
+        "question":"What are the symptoms of hyperthyroidism in cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, cats afflicted with hyperthyroidism usually develop a variety of signs, including weight loss, increased appetite, increased thirst and urination, vomiting, diarrhea, anorexia, and an unkempt coat.",
+        "latency_seconds":4.85
+    },
+    {
+        "_id":8,
+        "question":"How hyperthyroidism in cats are typically treated?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, hyperthyroidism in cats are typically treated with medication, radioactive iodine therapy, surgery, and dietary therapy.",
+        "latency_seconds":4.71
+    },
+    {
+        "_id":9,
+        "question":"Why is dental disease common in older cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, dental disease is common in older cats due to the fact that they are typically less adaptable to change.",
+        "latency_seconds":4.62
+    },
+    {
+        "_id":10,
+        "question":"What are the warning signs of dental disease in cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, the warning signs of dental disease in cats include:\n\n*   Not eating\n*   Vomiting (including frequent hairballs)\n*   Diarrhea or hard, dry stools\n*   Increased thirst and frequent urination\n*   Coughing or wheezing\n*   Sneezing, especially with discharge from the eyes or nose\n*   Itchy or dirty ears\n*   Limping or not putting weight on a leg",
+        "latency_seconds":5.4
+    },
+    {
+        "_id":11,
+        "question":"Why do vets discourage anesthesia-free dental cleanings?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Vets discourage anesthesia-free dental cleanings because of patient stress, injury, risk of aspiration, and lack of diagnostic capabilities.",
+        "latency_seconds":4.92
+    },
+    {
+        "_id":12,
+        "question":"What is a normal body temperature for a cat?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, a normal body temperature for a cat is between 100.5\u00b0F and 102.5\u00b0F (38\u00b0C and 39\u00b0C).",
+        "latency_seconds":5.19
+    },
+    {
+        "_id":13,
+        "question":"How often should a healthy adult cat visit the vet?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Should see the vet for a full checkup at least once a year.",
+        "latency_seconds":4.89
+    },
+    {
+        "_id":14,
+        "question":"Which vaccines are considered core for all cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources provided, the following vaccines are considered core for all cats:\n\n*   Feline panleukopenia virus (FPV)\n*   Feline viral rhinotracheitis (FVR)\n*   Disease caused by feline calicivirus (FCV)\n*   Feline leukemia virus (FeLV)\n*   Feline herpesvirus type 1 (FHV-1)\n*   D feline calicivirus (FCV)",
+        "latency_seconds":5.5
+    },
+    {
+        "_id":15,
+        "question":"Which parts of a cat's body should vaccine injections avoid?",
+        "model_name":"gemma3:1b",
+        "model_answer":"The sources provided do not explicitly state which parts of a cat\u2019s body vaccines should avoid.",
+        "latency_seconds":5.23
+    },
+    {
+        "_id":16,
+        "question":"What does FVRCP stand for?",
+        "model_name":"gemma3:1b",
+        "model_answer":"FVRCP stands for feline panleukopenia, feline viral rhinotracheitis, and disease caused by feline calicivirus.",
+        "latency_seconds":4.84
+    },
+    {
+        "_id":17,
+        "question":"Are indoor cats still at risk of parasites?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Outdoor cats can get parasites, including heartworms, intestinal parasites, and fleas, which can be dangerous for people, particularly those with weakened immune systems.",
+        "latency_seconds":4.85
+    },
+    {
+        "_id":18,
+        "question":"How can you tell if a cat has intestinal worms?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, you can tell if a cat has intestinal worms by looking for symptoms such as frequent vomiting, diarrhea, hard, dry stools, and loss of hair.",
+        "latency_seconds":4.74
+    },
+    {
+        "_id":19,
+        "question":"What cause obesity in cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, obesity in cats is caused by the practice of \u201cfree feeding,\u201d which encourages \u201cfeeding meals\u201d rather than allowing the animal to consume excessive amounts of dry food that is made constantly available.",
+        "latency_seconds":5.16
+    },
+    {
+        "_id":20,
+        "question":"How can you check if your cat is overweight?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, you can assess your cat\u2019s weight status by using a nine-point scoring system, with scores of 4.5 to 5 indicating that an animal is at its ideal weight.",
+        "latency_seconds":5.29
+    },
+    {
+        "_id":21,
+        "question":"What is anorexia in cats and why is it dangerous?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Anorexia in cats is a clinical sign of many diverse feline health problems, ranging from diabetes, kidney disease, hepatic lipidosis, hyperthyroidism, and pancreatitis, asthma, and a fever. It\u2019s a broad clinical sign that can have a severe impact on a mature cat\u2019s health if it persists for as little as 24 hours. For a kitten younger than six weeks of age, food avoidance for just 12 hours can pose a lethal threat.\n\nFor a cat that is not eating deserves to have a full veterinary workup\u2014a thorough physical exam followed by any lab work and imaging that\u2019s indicated by the exam.  It\u2019s most commonly seen in hospitalized cats, and a moderately sick animal may seriously complicate its health problems by refusing to eat. Food avoidance also occurs with relative frequency among cats that are placed in boarding kennels.",
+        "latency_seconds":7.33
+    },
+    {
+        "_id":22,
+        "question":"Can food allergies cause skin problems in cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Yes, food allergies can cause skin problems in cats. The sources state that \u201cThe itching eruptions primarily affect the head and neck area,\u201d and that \u201cIf a food allergy is indeed suspected, the specific allergen should be identified and removed from the animal\u2019s diet.\u201d",
+        "latency_seconds":6.14
+    },
+    {
+        "_id":23,
+        "question":"What is feline cognitive dysfunction?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Feline cognitive dysfunction is a puzzling, progressively debilitating condition whose signs resemble those associated in humans with Alzheimer\u2019s disease and senile dementia.",
+        "latency_seconds":5.81
+    },
+    {
+        "_id":24,
+        "question":"What is signs that a older cat may be in pain?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources provided, signs that an older cat may be in pain include:\n\n*   Changes in litter box usage (e.g., difficulty using the litter box)\n*   Avoidance of going up and down stairs\n*   Difficulty hopping in and out of its litter box\n*   Avoiding going up and down stairs\n*   Alteration of gait\n*   Difficulty grooming itself thoroughly\n*   Changes in sleep patterns (e.g., sleeping more or less)\n*   Changes in vocalization (e.g., nighttime waking)\n*   Loss of interest in playing\n*   Changes in appetite or water intake\n*   Urinating and defecating outside the litter box\n*   Prolonged periods of staring blankly into space or at walls\n*   Unexplained changes in behavior (e.g., restlessness, anxiety)",
+        "latency_seconds":7.69
+    },
+    {
+        "_id":25,
+        "question":"At what age should a cat be spayed or neutered?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Spaying or neutering is typically recommended when cats are about 5-6 months old.",
+        "latency_seconds":5.56
+    },
+    {
+        "_id":26,
+        "question":"What are the benefits of spaying or neutering a cat?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Spaying or neutering a cat offers several benefits, including:\n\n*   **Preventing unwanted pregnancies:** This helps control the population of feral and unwanted cats.\n*   **Reducing health risks:** Spaying eliminates the risk of mammary cancer in females, and neutering reduces risks of testicular cancer and other health problems in males.\n*   **Decreasing behaviors like roaming, aggression, and marking territory:** Neutering can help reduce these behaviors.\n*   **Eliminating urine spraying:** Neutering eliminates the production of hormones that cause male cats to roam and spray.",
+        "latency_seconds":6.4
+    },
+    {
+        "_id":27,
+        "question":"Which common houseplants are toxic to cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the provided sources, the following common houseplants are toxic to cats:\n\n*   Lilies\n*   Caladium\n*   Dumb cane\n*   English ivy\n*   Mistletoe\n*   Oleander\n*   Philodendron\n*   Poinsettia\n*   Catnip",
+        "latency_seconds":6.49
+    },
+    {
+        "_id":28,
+        "question":"Is lily toxic to cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Yes, lily is toxic to cats. According to the sources, lilies can cause life-threatening kidney failure if ingested, even in tiny amounts.",
+        "latency_seconds":4.42
+    },
+    {
+        "_id":29,
+        "question":"What household foods is dangerous for cats to eat?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Indoor and outdoor plants can pose a risk to your cat. Ingesting just a small piece of some common ornamental plants such as poinsettias could be enough to make a cat ill, and swallowing a sizable amount could prove fatal. Lilies are especially toxic to cats; they can cause life-threatening kidney failure if ingested even in tiny amounts.",
+        "latency_seconds":5.11
+    },
+    {
+        "_id":30,
+        "question":"What should you do if your cat eats a toxic plant?",
+        "model_name":"gemma3:1b",
+        "model_answer":"If your cat eats a toxic plant, the following steps are recommended:\n\n1.  Contact your veterinarian or a local poison control center immediately.\n2.  Provide them with the name of the plant, as well as any information you have about it.\n3.  Follow their instructions carefully.",
+        "latency_seconds":5.24
+    },
+    {
+        "_id":31,
+        "question":"Why do cats need more frequent vet visits as they age?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, cats need more frequent vet visits as they age because older cats are more likely to get sick, and catching problems early is important.",
+        "latency_seconds":5.28
+    },
+    {
+        "_id":32,
+        "question":"What blood tests help diagnose kidney disease in cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources provided, the following blood tests help diagnose kidney disease in cats:\n\n*   Blood urea nitrogen (BUN)\n*   Creatinine\n*   SDMA\n*   Urine specific gravity\n*   Creatinine concentrations in the blood\n*   Urine protein\/creatinine ratio (UPCR)\n*   Blood pressure\n*   Fructosamine concentration",
+        "latency_seconds":5.98
+    },
+    {
+        "_id":33,
+        "question":"What is azotemia?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, azotemia is a condition characterized by elevated levels of nitrogen in the blood.",
+        "latency_seconds":5.09
+    },
+    {
+        "_id":34,
+        "question":"Can dehydration affect kidney test results in cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Yes, dehydration can affect kidney test results in cats. Studies suggest that dehydration can falsely increase BUN and creatinine levels, potentially leading to an inaccurate assessment of kidney function.",
+        "latency_seconds":5.01
+    },
+    {
+        "_id":35,
+        "question":"What is the role of SDMA in diagnosing kidney disease?",
+        "model_name":"gemma3:1b",
+        "model_answer":"SDMA concentrations are less affected by dehydration and muscle mass, potentially allowing CKD to be diagnosed sooner.",
+        "latency_seconds":5.34
+    },
+    {
+        "_id":36,
+        "question":"How can hypertension affect a cat with kidney disease?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Hypertension can lead to several problems in a cat with kidney disease, including:\n\n*   Sudden changes in vision\n*   Neurological abnormalities such as disorientation and weakness\n*   Heart issues\n*   Loss of appetite\n*   Pale or white gums",
+        "latency_seconds":5.0
+    },
+    {
+        "_id":37,
+        "question":"What are common causes of hair loss in cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, some of the most common causes of hair loss in cats include idiopathic cystitis, urolithiasis (also called urinary stones), and urethral obstruction.",
+        "latency_seconds":5.45
+    },
+    {
+        "_id":38,
+        "question":"Why do senior cats need more frequent bloodwork?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, senior cats need more frequent bloodwork because they are more likely to get sick and catching problems early is important.",
+        "latency_seconds":4.58
+    },
+    {
+        "_id":39,
+        "question":"Is weight loss a warning sign in older cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Weight loss in older cats can be a concerning sign, but it\u2019s important to understand that it\u2019s not always a direct indicator of a serious health problem. Here\u2019s a breakdown of why it can be a warning and what to look for:\n\n**Why Weight Loss Can Be a Warning:**\n\n* **Organ Dysfunction:** As cats age, many organs, including the kidneys, liver, and pancreas, can become less efficient at processing food and nutrients. This can lead to weight loss due to decreased appetite, reduced metabolism, or impaired nutrient absorption.\n* **Underlying Medical Conditions:** Weight loss can be a symptom of various underlying health issues, such as:\n    * **Diabetes:** This is a very common cause of weight loss in older cats.\n    * **Kidney Disease:**  Kidney disease can reduce appetite and lead to weight loss.\n    * **Liver Disease:** Liver problems can also affect appetite.\n    * **Cancer:** Some cancers can cause weight loss.\n    * **Hypothyroidism:**  This condition, where the thyroid gland doesn't produce enough thyroid hormone, can lead to weight loss.\n    * **Parasitic Infections:** Certain parasites can impact appetite.\n* **Pain and Discomfort:** Chronic pain or discomfort can reduce a cat\u2019s desire to eat, leading to weight loss.\n* **Changes in Appetite:** Older cats often have a decreased appetite, which can contribute to weight loss.\n\n**What to Look For \u2013 It\u2019s Not Always a Direct Sign:**\n\n* **Gradual Weight Loss:** A slow, steady weight loss is more concerning than a sudden drop in weight.\n* **Changes in Eating Habits:**  Noticeable changes in where your cat chooses to eat (e.g., eating less frequently, eating in a different location), or changes in the quality of their food, can also be indicators.\n* **Decreased Activity:** Reduced energy levels and decreased activity levels can be a sign of underlying health issues.\n* **Weight Loss in Specific Areas:**  Focus on areas where weight loss is most noticeable (e.g., flanks, hips).\n* **Other Symptoms:**  Watch for other symptoms like lethargy, decreased grooming, vomiting, diarrhea, or changes in urination.\n\n**Important Note:**  *Always* consult with your veterinarian to determine the cause of weight loss in your cat.  They can perform a physical examination, run blood tests, and other diagnostic tests to identify the underlying problem.\n\n**Disclaimer:** *I am an AI Chatbot and not a veterinarian. This information is for general knowledge and informational purposes only, and does not constitute medical advice. It is essential to consult with a qualified veterinarian for any health concerns or before making any decisions related to your health or treatment.*",
+        "latency_seconds":11.53
+    },
+    {
+        "_id":40,
+        "question":"What vitamin or protein levels do senior cats need in their diet?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Senior cats require increased amounts of vitamins and minerals, particularly those found in animal products, to support their physiological changes as they age. Specifically, they need more protein, fats, and essential nutrients like vitamins and minerals.",
+        "latency_seconds":11.47
+    },
+    {
+        "_id":41,
+        "question":"Why do cats scratch furniture?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Cats scratch furniture because it\u2019s a natural behavior to stretch their muscles, shed old cuticle, sharpen their claws, and leave scent marks.",
+        "latency_seconds":11.3
+    },
+    {
+        "_id":42,
+        "question":"Whats the best way to stop a cat from scratching the furnitures?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Okay, let\u2019s tackle this question. Here\u2019s the answer, grounded in the provided sources and focusing on the best strategies to manage a cat\u2019s scratching behavior:\n\n**The best way to stop a cat from scratching furniture is to redirect their scratching behavior to appropriate outlets.**\n\nHere\u2019s a breakdown of the recommended strategies, based on the sources:\n\n1.  **Provide Attractive Scratching Posts:**  The sources emphasize providing scratching posts as the primary solution.  \"A scratching post of all shapes, sizes, and textures are available at most pet stores.\"  This is the core of the solution.\n\n2.  **Place Scratching Posts Strategically:** The sources suggest placing them near areas where the cat already scratches. \u201cTo find out what your cat prefers to scratch on, observe carefully.\u201d This helps the cat associate the post with a positive activity.\n\n3.  **Reward and Reinforce Positive Behavior:** The sources highlight rewarding the cat for using the scratching post. \u201cTake your cat to the new scratching post and reward her with treats, strokes, and praise for using it.\u201d This reinforces the desired behavior.\n\n4.  **Make the Scratching Area Less Appealing:** The sources recommend covering items with blankets, sheets of plastic, or double-sided tape to deter scratching. \u201cCover items with blankets, sheets of plastic, or double-sided tape\u201d is a key step.\n\n5. **Consider a Deterrents:** The sources mention using odor neutralizers to discourage scratching.\n\n**In short, focus on creating a scratching post that the cat finds appealing and rewarding, and then redirect their scratching behavior to those posts.**\n\n---\n\nDo you have any other questions about this response or would you like me to elaborate on any of these points?",
+        "latency_seconds":15.06
+    },
+    {
+        "_id":43,
+        "question":"Why do cats knead with their paws?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Cats knead with their paws while sleeping to distribute oils and a scent from their glands, which helps them remember where they\u2019ve been and what they\u2019ve been doing.",
+        "latency_seconds":7.68
+    },
+    {
+        "_id":44,
+        "question":"What does it mean when a cat's tail twitches?",
+        "model_name":"gemma3:1b",
+        "model_answer":"When a cat\u2019s tail twitches, it can indicate a variety of things, often suggesting anxiety or discomfort. It\u2019s a sign that the cat is feeling stressed or agitated. The twitching can be a response to a perceived threat or a feeling of unease. It\u2019s important to note that the specific meaning can vary depending on the context and the cat\u2019s individual personality.",
+        "latency_seconds":8.19
+    },
+    {
+        "_id":45,
+        "question":"Why do cats purr?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Cats purr to communicate contentment and affection. The purr is a self-soothing mechanism, and it also signals to other cats that they are a safe and welcoming presence.\n\nHere are some sources that support this:\n\n*   **Source 1** merck_veterinary_manual_chunks.json\n    Document: Purring\n    Section: Purring\n    \u201cPurring is just one way that cats communicate. When they make soft sounds, they might want attention. When they make loud sounds, they might be upset or need something urgently.\u201d\n\n*   **Source 2** merck_veterinary_manual_chunks.json\n    Document: Physical Description of Cats\n    Section: Why Do Cats Have Fur and Whiskers?\n    \u201cCats\u2019 fur protects their skin from the sun, cold, scratches, and insect bites. It also helps them regulate their body temperature and enhances their sense of touch.\u201d\n\n*   **Source 3** aaha_feline_life_stage_chunks.json\n    Document: Behavior and Environmental Needs\n    Section: Feline Communication Signs\n    \u201cAlthough cats may be distressed, they are stealthy in their ability to hide anxiety. A content cat will hold its ears forward, whiskers loose or relaxed, muscles soft, and tail loosely wrapped.\u201d\n\n*   **Source 4** ohio_indoor_pet_chunks.json\n    Document: Hiding Instinct\n    \u201cThis is why it is especially important to provide indoor cats with hiding areas; these spots must permit the cat to feel safe from people, loud noises and other animals (see more information about perches ).\u201d\n\n*   **Source 5** merck_veterinary_manual_chunks.json\n    Document: Behavior Problems in Cats\n    \u201cPurring is a self-soothing mechanism, and it also signals to other cats that they are a safe and welcoming presence.\u201d",
+        "latency_seconds":12.74
+    },
+    {
+        "_id":46,
+        "question":"Do all cats respond to catnip?",
+        "model_name":"gemma3:1b",
+        "model_answer":"No, not all cats respond to catnip.",
+        "latency_seconds":8.54
+    },
+    {
+        "_id":47,
+        "question":"What percentage of cats react to catnip?",
+        "model_name":"gemma3:1b",
+        "model_answer":"The sources do not provide information about the percentage of cats that react to catnip.",
+        "latency_seconds":8.35
+    },
+    {
+        "_id":48,
+        "question":"Why cats hides when they is scared?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Cats hide when they are anxious or feel threatened because they like to feel safe from people, loud noises, and other animals.",
+        "latency_seconds":7.63
+    },
+    {
+        "_id":49,
+        "question":"What triggers redirected aggression in cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"When a cat is excited by a stimulus but cannot respond directly, the cat may redirect his aggression toward a human or another cat.",
+        "latency_seconds":5.43
+    },
+    {
+        "_id":50,
+        "question":"Is punishment an effective way to correct bad cat behavior?",
+        "model_name":"gemma3:1b",
+        "model_answer":"No, punishment is not an effective way to correct bad cat behavior. The sources indicate that punishment is ineffective and can actually make the problem worse. It\u2019s described as being \u201cjust as hard to use correctly as counterconditioning and desensitization\u201d and can lead to fear, avoidance, and increased aggression.  The text emphasizes that positive reinforcement techniques, such as rewarding desired behaviors, are more effective and humane.",
+        "latency_seconds":6.41
+    },
+    {
+        "_id":51,
+        "question":"Why do cats prefer uncovered litter boxes?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, cats generally prefer uncovered litter boxes because they can provide more room for your cat to move around.",
+        "latency_seconds":6.29
+    },
+    {
+        "_id":52,
+        "question":"How many times a day does a cat typically use the litter box?",
+        "model_name":"gemma3:1b",
+        "model_answer":"The sources do not provide information on how many times a cat typically uses the litter box.",
+        "latency_seconds":6.12
+    },
+    {
+        "_id":53,
+        "question":"Why a cat suddenly stop use the litter box?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, a cat suddenly stop using the litter box may be due to medical problems, an aversion to the litter box, or a preference for eliminating in other places.",
+        "latency_seconds":4.51
+    },
+    {
+        "_id":54,
+        "question":"What is status-related aggression in cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Status-related aggression in cats is characterized by scratching or biting by cats towards people that try to control their behavior. It\u2019s a type of aggression where cats exhibit this behavior when approached when they are aroused, relaxed, or attempting to maintain a social position. Unlike dog aggression, it\u2019s not linked to resources like food or territory.",
+        "latency_seconds":5.31
+    },
+    {
+        "_id":55,
+        "question":"How can you tell if two cats in the same home dislike each other?",
+        "model_name":"gemma3:1b",
+        "model_answer":"It\u2019s difficult to definitively say with certainty *why* two cats dislike each other, as individual personalities and experiences play a significant role. However, here\u2019s a breakdown of potential signs that indicate dislike between cats in the same home:\n\n*   **Aggression:** This is a major red flag.  Aggression can manifest as stalking, hissing, swatting, biting, or chasing.\n*   **Territorial Behavior:** Cats may exhibit territorial behavior, such as constantly patrolling their spaces, rubbing against furniture, or trying to eliminate outside the litter box.\n*   **One Cat\u2019s Dominance:** One cat might consistently dominate the other, ignoring or bullying them.\n*   **One Cat's Withdrawal:** One cat might become withdrawn, avoid eye contact, or spend more time alone.\n*   **Increased Vocalization:**  Increased hissing, growling, or yowling can be a sign of tension and dislike.\n*   **Changes in Litter Box Habits:**  One cat might start eliminating outside the litter box, or the other cat might start doing the same.\n*   **Stress Signs:**  Visible signs of stress, such as flattened ears, tucked tail, or dilated pupils, can indicate discomfort and dislike.\n\n**Important Note:**  It\u2019s crucial to remember that cats can also simply *not* like each other, and that's perfectly normal.  It's more likely that the dislike is rooted in individual personality differences.\n\n**Source:** [Source 1] ohio_indoor_pet_chunks.json",
+        "latency_seconds":9.1
+    },
+    {
+        "_id":56,
+        "question":"Why do cats groom themselves so often?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Cats groom themselves frequently because it\u2019s a natural behavior for them, according to the sources. They groom themselves to maintain their coat, regulate their body temperature, and enhance their sense of touch.",
+        "latency_seconds":9.28
+    },
+    {
+        "_id":57,
+        "question":"How many times a day do cats normally groom?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, cats typically spend between 30 and 50 percent of their day grooming themselves.",
+        "latency_seconds":8.36
+    },
+    {
+        "_id":58,
+        "question":"What does excessive licking in cats usually indicate?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Excessive licking in cats can indicate a variety of underlying issues, including parasites, skin problems, or a psychological problem. It can sometimes stem from a compulsive behavior, but it can also be a sign of a medical condition.",
+        "latency_seconds":6.84
+    },
+    {
+        "_id":59,
+        "question":"Why do cats like to sit in high places?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Cats enjoy hiding in high places because they like to feel safe from people, loud noises, and other animals, as seen in the sources.",
+        "latency_seconds":7.18
+    },
+    {
+        "_id":60,
+        "question":"What is the purpose of a scratching post?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, a scratching post serves several purposes:\n\n*   To satisfy certain needs, like marking territory and removing scent from paws.\n*   To save furniture and carpets by allowing cats to scratch on appropriate objects.",
+        "latency_seconds":7.35
+    },
+    {
+        "_id":61,
+        "question":"Do cats prefer routine over change?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, cats do not prefer routine over change. The sources state that cats are \u201cremarkably marked by the role of scent in their environment\u201d and that they \u201cmark with urine, feces, and special scent glands under the chin and on the paws.\u201d  The text emphasizes that cats are influenced by the scent of their environment, and they mark with urine, feces, and special scent glands under the chin and on the paws.",
+        "latency_seconds":8.53
+    },
+    {
+        "_id":62,
+        "question":"Why cats brings dead animals to home?",
+        "model_name":"gemma3:1b",
+        "model_answer":"The sources suggest that cats may bring dead animals to their homes as part of their normal investigation and play.",
+        "latency_seconds":8.15
+    },
+    {
+        "_id":63,
+        "question":"What is play aggression in kittens?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources provided, play aggression in kittens is characterized by:\n\n*   **Thrashing their tails back and forth**\n*   **Having their ears pinned to the tip of their head**\n*   **Having dilated pupils**\n*   **Stalking their target**\n*   **Pouncing from a hiding place**\n\nIt\u2019s often linked to a fear induced, related to play, or due to predatory instincts.",
+        "latency_seconds":5.51
+    },
+    {
+        "_id":64,
+        "question":"Why might a cat bite during petting?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, a cat might bite during petting due to overstimulation and an attempt to control when the petting ends.",
+        "latency_seconds":5.3
+    },
+    {
+        "_id":65,
+        "question":"How can you reduce separation anxiety in cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Okay, here\u2019s an answer based solely on the provided sources, focusing on reducing separation anxiety in cats:\n\n\u201cTo reduce separation anxiety in cats, you can implement several strategies. Here\u2019s a breakdown of what the sources suggest:\n\n*   **Provide Perches:**  \u201cProvide perches so the cat can look outside.\u201d \u2013 This is highlighted as a key element.\n*   **Offer Toys:** \u201cToys, toys and toys, ( toys , prey preference )\u201d \u2013  This suggests providing engaging toys to satisfy their natural instincts.\n*   **\u201cLet Your Cat \u2018Hunt\u2019 for Food\u201d:** \u2013 This is a specific technique mentioned as a way to satisfy their hunting instincts and reduce anxiety.\n*   **Hide Food:** \u2013 \u201cHide food throughout the house so the cat has to find it.\u201d \u2013 This helps reduce anxiety by creating a sense of security and routine.\n*   **\u201cLeave the Radio or TV on, tuned to your usual station.\u201d:** \u2013 This is suggested as a calming activity.\n*   **Spend at least 10 minutes daily playing with your cat.** \u2013 This is a key behavioral intervention.\n*   **Provide a Refuge:** \u2013 \u201cProvide a refuge\u201d \u2013 This is a crucial element \u2013 offering a safe and comfortable space for the cat to retreat to.\n*   **Counterconditioning:** \u2013 \u201cDesensitization is a way to gradually teach a cat to tolerate a situation by carefully exposing it to the situation in small steps.\u201d \u2013 This is a technique to reduce anxiety.\n*   **Avoidance of a Problem Behavior:** \u2013 \u201cAvoidance of a problem behavior is essential until you can seek qualified help, particularly in the case of cats that are biting or scratching.\u201d \u2013 This emphasizes the importance of avoiding the behavior altogether.\n\nEssentially, the sources emphasize creating a safe, stimulating, and predictable environment for the cat to reduce anxiety.\u201d",
+        "latency_seconds":9.19
+    },
+    {
+        "_id":66,
+        "question":"What is considered normal vocalizing for a cat?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Cats typically vocalize when they are ready to breed (\u201cin heat\u201d), or when they are upset or need something urgently.",
+        "latency_seconds":9.31
+    },
+    {
+        "_id":67,
+        "question":"Why do cats mark territory with urine?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Cats mark territory with urine primarily as a way to communicate their presence and establish boundaries to other cats, to advertise that they are ready to mate, and to express frustration with their circumstances.",
+        "latency_seconds":8.12
+    },
+    {
+        "_id":68,
+        "question":"Can boredom cause destructive behavior in cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Yes, boredom can contribute to destructive behavior in cats. Research suggests that prolonged boredom can lead to a variety of behaviors, including scratching, chewing, and other destructive actions.\n\nHere\u2019s a breakdown of how boredom can cause these issues:\n\n*   **Energy Release:** Cats are naturally active animals. Boredom can lead to pent-up energy, which they may express through destructive behaviors.\n*   **Instinctual Drives:** Boredom can trigger instinctive behaviors like hunting or chasing, which can manifest as scratching, chewing, or other unwanted actions.\n*   **Behavioral Patterns:** Boredom can lead to the development of repetitive behaviors, such as licking or grooming excessively.\n\n**Sources:**\n\n*   [Source 1] merck_veterinary_manual_chunks.json\n*   [Source 2] cornell_feline_health_chunks.json\n*   [Source 3] cornell_feline_health_chunks.json\n*   [Source 4] merck_veterinary_manual_chunks.json\n*   [Source 5] merck_veterinary_manual_chunks.json",
+        "latency_seconds":10.88
+    },
+    {
+        "_id":69,
+        "question":"How you can tell if a cat are stressed?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources provided, you can tell if a cat is stressed by observing behaviors such as:\n\n*   Excessive vocalization (crying, moaning, meowing)\n*   Not eating or drinking while owner is away\n*   Eliminating (often urinations) in inappropriate places\n*   Vomiting, food or hair often are contained in the vomit.\n*   Excessive self-grooming\n*   Destructive behavior\n*   Exuberant greetings when the owner returns home\n*   If your cat seems to be showing signs of separation anxiety",
+        "latency_seconds":7.13
+    },
+    {
+        "_id":70,
+        "question":"Why do cats like boxes and small enclosed spaces?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Cats generally prefer enclosed spaces like boxes because they provide a sense of security and privacy. The enclosed space offers a feeling of safety and reduces the feeling of being watched, which can be stressful for cats. It also allows them to feel more comfortable and secure.",
+        "latency_seconds":7.34
+    },
+    {
+        "_id":71,
+        "question":"How many hours a day do cats usually sleep?",
+        "model_name":"gemma3:1b",
+        "model_answer":"The sources do not provide information about how many hours a day cats usually sleep.",
+        "latency_seconds":7.15
+    },
+    {
+        "_id":72,
+        "question":"Why do cats have whiskers?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Cats have whiskers that are sensitive and help them judge the size of openings, like holes where rodents might be hiding. They can also raise their fur to help with temperature control or as a warning sign when they feel threatened.",
+        "latency_seconds":4.7
+    },
+    {
+        "_id":73,
+        "question":"Can cats see in complete darkness?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Yes, according to the sources, cats can see in complete darkness.",
+        "latency_seconds":5.57
+    },
+    {
+        "_id":74,
+        "question":"Why do cats' eyes glow in the dark?",
+        "model_name":"gemma3:1b",
+        "model_answer":"The sources do not provide information about why cats\u2019 eyes glow in the dark.",
+        "latency_seconds":5.48
+    },
+    {
+        "_id":75,
+        "question":"How many teeth does an adult cat have?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Cats have 30 baby teeth that are replaced by 30 adult teeth between the ages of 5 and 7 months.",
+        "latency_seconds":5.54
+    },
+    {
+        "_id":76,
+        "question":"Can cats taste sweetness?",
+        "model_name":"gemma3:1b",
+        "model_answer":"The provided text does not state whether cats can taste sweetness.",
+        "latency_seconds":4.79
+    },
+    {
+        "_id":77,
+        "question":"Why do cats have rough tongues?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Cats\u2019 tongues have a rough surface because they are covered with tiny spines called \u201cpapillae,\u201d which help them pick up small pieces of food when eating and trap loose fur when grooming.",
+        "latency_seconds":7.76
+    },
+    {
+        "_id":78,
+        "question":"How fast a domestic cat can runs?",
+        "model_name":"gemma3:1b",
+        "model_answer":"I\u2019m sorry, but I cannot answer your question about how fast a domestic cat runs. The provided sources do not contain any information about this topic.",
+        "latency_seconds":7.83
+    },
+    {
+        "_id":79,
+        "question":"Do cats sweat through their skin?",
+        "model_name":"gemma3:1b",
+        "model_answer":"No, sources do not indicate that cats sweat through their skin.",
+        "latency_seconds":7.41
+    },
+    {
+        "_id":80,
+        "question":"Why do cats have a third eyelid?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, cats have a third eyelid, also known as a heterochromia, because they often have a genetic condition called \u201cpseudo-eyelid\u201d that causes them to have two different colored irises.",
+        "latency_seconds":8.12
+    },
+    {
+        "_id":81,
+        "question":"Can cats be left- or right-pawed?",
+        "model_name":"gemma3:1b",
+        "model_answer":"No, cats should not be left or right-pawed.",
+        "latency_seconds":6.02
+    },
+    {
+        "_id":82,
+        "question":"Why are a cat's whiskers roughly as wide as its body?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Cats\u2019 whiskers are roughly as wide as their body because they are highly sensitive and used for detecting movement and changes in air currents \u2013 crucial for hunting and navigating their environment.",
+        "latency_seconds":6.58
+    },
+    {
+        "_id":83,
+        "question":"How many bones does a cat have in its tail?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, a cat has 11 bones in its tail.",
+        "latency_seconds":7.01
+    },
+    {
+        "_id":84,
+        "question":"Why do cats land on their feet when they fall?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Cats can rapidly right themselves when falling due to highly developed balance structures in their inner ear, allowing them to react quickly.",
+        "latency_seconds":6.52
+    },
+    {
+        "_id":85,
+        "question":"Do cats dream while they sleep?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Sources: [Source 1] ohio_indoor_pet_chunks.json\nDocument: Sleeping Habits\nSection: Sleeping Habits\n\nCats do not have the same daily sleep-wake cycle that we and many other animals do. Rather, they sleep and wake frequently throughout the day and night. This is because cats in the wild need to hunt as many as 20 small prey each day; they must be able to rest between each hunt so they are ready to pounce quickly when prey approaches. This explains why our cats seem to sleep so much during the day when we are awake, and spend so much time awake at night when we need to sleep!\n\nWe may conclude that cats are \u201ccreatures of the night\u201d, but it only seems that way because their sleep\/wake cycle is so different from ours. Adding playful activities to your cat\u2019s daily routine can diminish the occurrence of such nocturnal activity (see more information about increasing the activity of your cat ).\n\n[Source 2] ohio_indoor_pet_chunks.json\nDocument: Resting Areas\nSection: Resting Areas\n\nCats are at their most vulnerable while sleeping, so they prefer to rest in an areas where they feel safe and secure. Desirable resting areas typically are quiet, comfortable locations where the cat can escape from other members of the family. Your cat may choose to get out of the way by resting on top of the kitchen cupboards or under the bed, or she may like to sleep curled up in her cat tree or on your bed or sofa.\n\nOwners who prefer the cat to stay off of the bed and other furniture can encourage the cat to rest elsewhere by providing a refuge in a quiet part of the house. A refuge is a less-traveled or out-of-the-way area of the home where the cat has access to all of the necessities; a bed, food, water, a litter box, a scratching post, perch, and toys.\n\nCat beds can be purchased, but snug blankets and towels are just as appealing to cats and are easy to wash. The refuge should be a place where your cat feels safe and comfortable, for example a bedroom or back room. Your cat can retreat to her refuge when she wants to rest.\n\nWherever your cat chooses to rest it is important not to disturb her. Just as you may not want to be bothered while you are asleep or resting, neither does your cat. Respect your cat\u2019s privacy when she is resting and she will be more likely to seek you out when she is ready to interact.\n\n[Source 3] cornell_feline_health_chunks.json\nDocument: Cognitive Dysfunction\nSection: Introdu\u00e7\u00e3o\n\nAccording to theAmerican Pet Products Association(APPA), about 94\u00a0million cats currently reside in U.S. homes, up from 85\u00a0million in 2016. Much of this impressive increase, no doubt, stems from the pleasure that a growing number of people derive from having a cat around the house. But the dramatic population increase may also be attributed to the fact that cats in general are living longer nowadays than they typically did in the past. As a result of improved home care, better nutrition, advances in veterinary medicine, and so forth, it is not uncommon for a cat to live to the ripe old age of 20 or 21 years\u2014the equivalent of age 96 to 100 in a human.\n\nThere\u2019s a downside to this good news, however. As cats grow older, they, like humans, become increasingly susceptible to the onset of disorders associated with aging. As the years go by, their organs gradually function less efficiently, for example, and the potency of their immune systems naturally declines. Among the most troubling, and in some respects most baffling, of age-related feline disorders is cognitive dysfunction, a puzzling, progressively debilitating condition whose signs resemble those associated in humans with Alzheimer\u2019s disease and senile dementia.\n\nThe behavioral signs of cognitive dysfunction tend to become clearly noticeable incats that are 10 years of age or older. The signs include spatial disorientation; wandering away from home into unfamiliar territory; lack of interest in playing; excessive sleeping; altered cycles of sleep and wakefulness; long periods of staring blankly into space or at walls; indifference to food and water; urinating and defecating outside the litter box; and seemingly unprompted episodes of loud vocalizing, frequently in the middle of the night.\n\nSome of the bizarre behavior may be attributable to the gradual impact of a long-standing physical condition that worsens as a cat grows old or to diseases commonly found in older cats. The pain of arthritis, for example, can intensify over the years and cause a formerly athletic cat to slow down dramatically as the years pass.Kidney failuremay impact litter box behavior by causing excessive urination and soiling of the litter box, causing some fastidious cats to findalternative places to eliminate.\u00a0Arthritis may also hinder a cat\u2019s ability to get into the litter box in time.\u00a0 Night-time vocalizing is relatively common inhyperthyroid catsor cats withhypertension, and hypertension can also cause retinal detachment and blindness, leading to anxiety and confusion.\u00a0 Progressively painfulperiodontal diseasecan discourage the cat from visiting its food bowl with the same enthusiasm it showed at a younger age.\n\n[Source 4] merck_veterinary_manual_chunks.json\nDocument: Physical Description of Cats\nSection: Do Cats Sense Things Like People Do? > Vision\n\nCats have excellent vision. They can see more details than dogs, which helps them judge speed and distance well\u2014important skills for hunters. In low light, cats can see 6 times better than people, which is why people often say that cats can see in the dark.\n\n[Source 5] ohio_indoor_pet_chunks.json\nDocument: Social Habits\nSection: Social Habits\n\nCats are not as social as many other species and they do not communicate in the same ways we do. Contrary to what people believe, cats primarily rely on smell, not sight, to communicate with other cats, locate food, and detect predators.\n\nCats communicate by \u201cmarking\u201d objects and other animals, these marks are scents (called pheromones) released from special glands located in their forehead, cheeks, tail base, and paws when they scratch and rub their body on objects.\n\nCats also do not rely too much on sounds from other cats, so they do not pay particular attention to the verbal sounds we humans make.\n\nAllowing your cats to mark scratching posts and other appropriate objects in the home will reduce the temptation for them to mark using urine. It is important that indoor cats have enough litter in a clean litter box to hide urine scents after covering. In the wild, cats urinate in new clean spots all the time; if we want them to use the same spot each time, we have to keep it clean!",
+        "latency_seconds":22.1
+    },
+    {
+        "_id":86,
+        "question":"Why do some cats have extra toes?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Cats have extra toes because they are descended from ancient feline ancestors that had a unique skeletal structure.",
+        "latency_seconds":21.24
+    },
+    {
+        "_id":87,
+        "question":"Can cats recognise there own name?",
+        "model_name":"gemma3:1b",
+        "model_answer":"No, cats do not recognize their own name.",
+        "latency_seconds":20.86
+    },
+    {
+        "_id":88,
+        "question":"Why do cats have vertical pupils?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Cats have vertical pupils to help them see in low-light conditions.",
+        "latency_seconds":20.75
+    },
+    {
+        "_id":89,
+        "question":"How good is a cat's sense of smell compared to a human's?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Cats have a much stronger sense of smell than humans. According to the sources, cats can detect smells even more effectively than people.\n\nHere\u2019s a breakdown based on the provided sources:\n\n*   **Source 1:** \u201cA cat\u2019s sense of smell is much stronger than a person\u2019s.\u201d\n*   **Source 2:** \u201cCats have the same five basic senses as humans, but differ in function and sensitivity.\u201d\n*   **Source 3:** \u201cAs pets, cats generally require less attention and activity than dogs.\u201d\n*   **Source 4:** \u201cCats also have better hearing than people and even most dogs.\u201d\n*   **Source 5:** \u201cCats are not as social as many other species and they do not communicate in the same ways we do.\u201d",
+        "latency_seconds":8.09
+    },
+    {
+        "_id":90,
+        "question":"Why do black cats sometimes appear reddish in sunlight?",
+        "model_name":"gemma3:1b",
+        "model_answer":"The sources do not provide a definitive explanation for why black cats sometimes appear reddish in sunlight. However, the sources suggest that this color variation is a result of the pigment called melanins, which are produced by the cat\u2019s skin. Melanins absorb different wavelengths of light, and the combination of these wavelengths can create a reddish hue.",
+        "latency_seconds":8.63
+    },
+    {
+        "_id":91,
+        "question":"How often should you feed an adult cat each day?",
+        "model_name":"gemma3:1b",
+        "model_answer":"The article states that cats should be fed twice a day once they become an adult.",
+        "latency_seconds":8.62
+    },
+    {
+        "_id":92,
+        "question":"What should you look for when selecting a new cat?",
+        "model_name":"gemma3:1b",
+        "model_answer":"When selecting a new cat, look for signs of good health, including clear eyes, clean ears, a glossy coat, and a healthy weight. They should be active, friendly, and curious, not timid or aggressive.",
+        "latency_seconds":9.14
+    },
+    {
+        "_id":93,
+        "question":"Is wet food better than dry food for cats?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Wet food is generally considered better for cats than dry food due to its higher water content, which can help with hydration and urinary tract health.\n\nHere\u2019s why:\n\n*   **Increased Hydration:** Wet food contains more water than dry food, which is crucial for cats\u2019 health.\n*   **Improved Urinary Health:** Adequate hydration helps prevent urinary tract infections and stones.\n*   **Palatability:** Many cats prefer the taste and texture of wet food.\n\n**Sources:**\n\n*   [Source 1] cornell_feline_health_chunks.json\n*   [Source 2] cornell_feline_health_chunks.json\n*   [Source 3] merck_veterinary_manual_chunks.json\n*   [Source 4] cornell_feline_health_chunks.json\n*   [Source 5] cornell_feline_health_chunks.json",
+        "latency_seconds":8.13
+    },
+    {
+        "_id":94,
+        "question":"What supplies does a new kitten need?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources provided, a new kitten needs:\n\n*   Food\n*   Water\n*   A litter box\n*   A scratching post\n*   A perch\n*   Toys",
+        "latency_seconds":7.85
+    },
+    {
+        "_id":95,
+        "question":"How can you help a cat adjust to a new home?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Here\u2019s a response to your question, grounded in the provided sources:\n\nTo help a cat adjust to a new home, you can focus on providing a safe and comfortable refuge, increasing reassurance, and allowing her to explore at her own pace. Here\u2019s how:\n\n*   **Create a Refuge:** Offer a dedicated space where the cat can retreat to, providing a comfortable and secure environment.\n*   **Increase Reassurance:** Provide plenty of playtime, petting, and grooming to help her feel secure and comfortable.\n*   **Allow for Exploration:** Let her investigate the new surroundings at her own speed. Don't force interaction; allow her to move through the space when she feels ready.\n*   **Routine:** Maintain her existing routine as much as possible to reduce stress.\n*   **Introduce Familiarity:**  Involve her with familiar people or items (like a favorite toy) to help her feel more secure.\n\n**Sources:**\n\n*   [Source 1] ohio_indoor_pet_chunks.json\n*   [Source 2] ohio_indoor_pet_chunks.json\n*   [Source 3] ohio_indoor_pet_chunks.json\n*   [Source 4] ohio_indoor_pet_chunks.json\n*   [Source 5] ohio_indoor_pet_chunks.json\n\nI hope this helps!",
+        "latency_seconds":11.34
+    },
+    {
+        "_id":96,
+        "question":"Is safe to travel with a cat by car?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Yes, it is safe to travel with a cat by car. The sources state: \u201cIt is always best for your cat to travel in a cat carrier.\u201d",
+        "latency_seconds":11.08
+    },
+    {
+        "_id":97,
+        "question":"Should indoor cats be allowed outside unsupervised?",
+        "model_name":"gemma3:1b",
+        "model_answer":"The sources suggest that indoor cats should be allowed to stay indoors unless they are trained to venture outside. The text highlights the potential risks associated with outdoor cats, including fights, disease, predation, and the need to breed. It emphasizes the benefits of keeping cats indoors for their health and safety.",
+        "latency_seconds":6.71
+    },
+    {
+        "_id":98,
+        "question":"What is the best way to introduce a new pet to a resident cat?",
+        "model_name":"gemma3:1b",
+        "model_answer":"The sources recommend a slow and gradual introduction process, starting with scent introduction, followed by visual contact, and eventually, supervised meetings. It suggests allowing the cat to investigate her room at her own pace and providing a safe retreat.",
+        "latency_seconds":6.79
+    },
+    {
+        "_id":99,
+        "question":"Why is fresh water important for cats that eat mostly dry food?",
+        "model_name":"gemma3:1b",
+        "model_answer":"Fresh water is important for cats that eat mostly dry food because the feeding instructions on pet food labels are based on the needs of the average cat, and you may be feeding more than necessary if your cat expends less energy per day than the average cat.",
+        "latency_seconds":6.96
+    },
+    {
+        "_id":100,
+        "question":"What should a first aid kit for cats include?",
+        "model_name":"gemma3:1b",
+        "model_answer":"According to the sources, a first aid kit for cats should include:\n\n*   **Sterile saline solution:** For flushing wounds.\n*   **Sterile gauze pads:** For cleaning and dressing wounds.\n*   **Medical tape:** For securing dressings.\n*   **Hydrogen peroxide:** For cleaning wounds (use sparingly and only when necessary).\n*   **Tweezers:** For removing splinters or debris.\n*   **Scissors:** For trimming bandages or removing splinters.\n*   **A pet first aid guide:** To provide information on common cat injuries and treatment.",
+        "latency_seconds":8.35
+    }
+]

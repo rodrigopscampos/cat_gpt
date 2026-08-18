@@ -113,12 +113,12 @@ class RAGPipeline:
         messages.append({"role": "user", "content": user_prompt})
         return PromptBundle(messages=messages, context=context)        
 
-    def _execute_ollama_request(self, messages: list[dict[str, str]]) -> str:
+    def _execute_ollama_request(self, messages: list[dict[str, str]], model: str) -> str:
         client = Client(host=self.config.ollama_base_url)
 
         try:
             response = client.chat(
-                model=self.config.llm_model,
+                model=model,
                 messages=messages,
                 stream=False,
                 options={"temperature": self.config.temperature},
@@ -127,15 +127,15 @@ class RAGPipeline:
             response_text = str(response["message"]["content"])
             print(response_text)
             return response_text
-    
+
         except Exception as e:
             print(e)
             raise e
 
-    def answer(self, question: str, history: list[dict[str, str]]) -> RAGResult:
+    def answer(self, question: str, history: list[dict[str, str]], model: str | None = None) -> RAGResult:
         sources = self.vec_store_retriever.retrieve(question)
         prompt = self._build_messages(question=question, sources=sources, history=history)
-        answer = self._execute_ollama_request(prompt.messages)
+        answer = self._execute_ollama_request(prompt.messages, model=model or self.config.llm_model)
         return RAGResult(
             question=question, 
             answer=_render_answer(answer, sources), 
