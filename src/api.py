@@ -20,6 +20,11 @@ app = FastAPI(
 
 pipeline = RAGPipeline()
 
+# The synthetic model id advertised by /v1/models below. Open WebUI sends this
+# back as `model` by default; it isn't a real Ollama model name, so it's treated
+# as "no model requested" and falls back to Config.llm_model.
+DEFAULT_MODEL_ID = "cat-gpt-rag"
+
 class OpenAIMessage(BaseModel):
     role: str
     content: str
@@ -51,7 +56,7 @@ def get_models():
         "object": "list",
         "data": [
             {
-                "id": "cat-gpt-rag",
+                "id": DEFAULT_MODEL_ID,
                 "object": "model",
                 "created": int(time.time()),
                 "owned_by": "local"
@@ -71,7 +76,14 @@ def chat_completions(request: OpenAIChatRequest):
     # The final message is treated as the current question
     question = history_msgs.pop()["content"] if history_msgs else ""
 
-    result = pipeline.answer(question, history=_format_history(history_msgs, pipeline.config.conversation_turns))
+    requested_model = request.model.strip()
+    model_override = requested_model if requested_model and requested_model != DEFAULT_MODEL_ID else None
+
+    result = pipeline.answer(
+        question,
+        history=_format_history(history_msgs, pipeline.config.conversation_turns),
+        model=model_override,
+    )
 
     # Open WebUI standard UI doesn't natively parse custom payload blocks, 
     # so we neatly format your RAG sources at the end of the text response.
