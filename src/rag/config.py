@@ -9,7 +9,7 @@ class RuntimeConfig:
     documents_dir: Path = Path("documents")
     collection_name: str = "rag_documents"
     embedding_model: str = "BAAI/bge-m3"
-    llm_model: str = "gemma3:1b"
+    llm_model: str = "llama3.2:3b"
     ollama_base_url: str = "http://localhost:11434"
     top_k: int = 5
     max_context_chars: int = 12000
